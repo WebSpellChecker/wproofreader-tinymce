@@ -1,0 +1,25 @@
+{
+  "name": "wproofreader-tinymce",
+  "version": "0.0.1",
+  "description": "WProofreader spelling and grammar check plugin for TinyMCE",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --quiet ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebSpellChecker/wproofreader-tinymce.git"
+  },
+  "author": "WebSpellChecker (https://webspellchecker.com/)",
+  "bugs": {
+    "url": "https://github.com/WebSpellChecker/wproofreader-tinymce/issues"
+  },
+  "homepage": "https://github.com/WebSpellChecker/wproofreader-tinymce#readme",
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-formatter-pretty": "^6.0.1",
+    "eslint-plugin-import": "^2.29.1",
+    "husky": "^9.1.4"
+  }
+}
