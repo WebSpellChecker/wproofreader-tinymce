@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>WProofreader TinyMCE plugin</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://cdn.tiny.cloud/1/8dw5ikeotv79zgkkf8jp7xuknfzlpfymuo7hsnyqnqm4keei/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>	
+
+	<script>
+		tinymce.init({
+			selector: '.tinymce',
+			menubar: false,
+			toolbar: 'undo redo | bold italic underline | wproofreader',
+			external_plugins: {
+				wproofreader: 'http://localhost:5000/dist/plugin.min.js'
+			},
+			wproofreader: {
+				serviceProtocol: 'http',
+				serviceHost: 'localhost',
+				servicePort: '2880',
+				servicePath: '/',
+				srcUrl: 'https://svc.webspellchecker.net/spellcheck31/wscbundle/wscbundle.js'
+			}
+		});
+	</script>
+</head>
+<body>
+	<textarea class="tinymce">
+		<p>Enter you text here. Hover on the marked words for intant correction suggestions. To got the whole text checked at once, switch to the Proofread in dialog mode in the editor settings.</p>
+	</textarea>
+</body>
+</html>
