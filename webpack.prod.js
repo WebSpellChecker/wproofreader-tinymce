@@ -62,7 +62,7 @@ const environment = (env) => {
 		entry: {},
 		plugins: [
 			new CopyPlugin({
-				patterns: ['LICENCE.txt', 'CHANGELOG.md'],
+				patterns: ['LICENCE.md', 'CHANGELOG.md'],
 			}),
 			new VersionFile({
 				output: './dist/version.txt',
