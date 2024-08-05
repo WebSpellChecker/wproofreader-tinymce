@@ -1,8 +1,10 @@
 module.exports = {
 	env: {
 		browser: true,
+		mocha: true,
 		es2021: true
 	},
+	plugins: ['chai', 'mocha'],
 	ignorePatterns: ['dist/**/*.js'],
 	extends: 'airbnb-base',
 	parserOptions: {
