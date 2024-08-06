@@ -57,16 +57,16 @@
             this._options = this._getOptions();
             this._init();
         }
-        _init() {
-            this._setTheme();
-            this._setAutoStartup();
-        }
         _getOptions() {
             const t = this._editor.getParam("wproofreader");
             if (!t) {
                 throw new Error("No WProofreader configuration.");
             }
             return t;
+        }
+        _init() {
+            this._setTheme();
+            this._setAutoStartup();
         }
         _setTheme() {
             if (!this._options.theme) {

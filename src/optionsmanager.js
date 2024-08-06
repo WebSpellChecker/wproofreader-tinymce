@@ -18,16 +18,6 @@ export default class OptionsManager {
 	}
 
 	/**
-	 * Initializes {@link OptionsManager} instance.
-	 *
-	 * @private
-	 */
-	_init() {
-		this._setTheme();
-		this._setAutoStartup();
-	}
-
-	/**
 	 * Returns {@code WProofreader} options from editor config.
 	 *
 	 * @private
@@ -43,6 +33,16 @@ export default class OptionsManager {
 		}
 
 		return options;
+	}
+
+	/**
+	 * Initializes {@link OptionsManager} instance.
+	 *
+	 * @private
+	 */
+	_init() {
+		this._setTheme();
+		this._setAutoStartup();
 	}
 
 	/**
