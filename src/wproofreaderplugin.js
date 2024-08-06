@@ -76,7 +76,6 @@ export default class WProofreaderPlugin {
 	 */
 	_subscribeOnEditorEvents() {
 		this._editor.on('SwitchMode', () => this._handleSwitchMode());
-
 		this._editor.on('remove', () => this._handleRemove());
 	}
 
