@@ -44,7 +44,7 @@ export default class ButtonCreator {
 	 *
 	 * @private
 	 *
-	 * @returns {List<Object>} - A list of menu buttons.
+	 * @returns {Array<Object>} - A list of menu buttons.
 	 */
 	_getMenuButtons() {
 		if (!this._wproofreader.isInitialized()) {
