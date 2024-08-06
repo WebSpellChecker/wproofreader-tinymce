@@ -99,7 +99,6 @@
             this._loadWscBundle().then((() => {
                 this._initOnScriptLoaded();
             })).catch((t => {
-                console.log("error");
                 throw new Error(t);
             }));
         }

@@ -30,7 +30,6 @@ export default class WProofreader {
 				this._initOnScriptLoaded();
 			})
 			.catch((error) => {
-				console.log('error');
 				throw new Error(error);
 			});
 	}
