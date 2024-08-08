@@ -15,8 +15,6 @@ describe('WProofreader', () => {
 	let getOptionsStub;
 
 	beforeEach(() => {
-		sinon.restore();
-
 		window.tinymce = { ScriptLoader: { loadScript: sinon.stub().resolves() } };
 		window.WEBSPELLCHECKER = { init: sinon.stub() };
 
@@ -28,6 +26,10 @@ describe('WProofreader', () => {
 		setOptionStub = sinon.stub(optionsManager, 'setOption');
 		getOptionsStub = sinon.stub(optionsManager, 'getOptions').returns(options);
 		sinon.stub(optionsManager, 'getOption').withArgs('srcUrl').returns(srcUrl);
+	});
+
+	afterEach(() => {
+		sinon.restore();
 	});
 
 	it('should subscribe on editor init, if editor is not initialized', (done) => {

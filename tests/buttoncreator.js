@@ -12,7 +12,6 @@ describe('ButtonCreator', () => {
 	let buttonCreator;
 
 	beforeEach(() => {
-		sinon.restore();
 		sinon.stub(WProofreader.prototype, '_init');
 
 		wscInstance = new WscInstance();
@@ -21,6 +20,10 @@ describe('ButtonCreator', () => {
 		buttonCreator = new ButtonCreator(wproofreader);
 
 		wproofreader._instance = wscInstance;
+	});
+
+	afterEach(() => {
+		sinon.restore();
 	});
 
 	it('should be created', () => {

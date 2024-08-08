@@ -10,13 +10,15 @@ describe('OptionsManager', () => {
 	let getParamStub;
 
 	beforeEach(() => {
-		sinon.restore();
-
 		options = {};
 		editor = new Editor();
 		getParamStub = sinon.stub(editor, 'getParam').returns(options);
 
 		optionsManager = new OptionsManager(editor);
+	});
+
+	afterEach(() => {
+		sinon.restore();
 	});
 
 	describe('initialization', () => {

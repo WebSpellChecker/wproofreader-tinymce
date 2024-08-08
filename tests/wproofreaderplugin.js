@@ -14,8 +14,6 @@ describe('WProofreaderPlugin', () => {
 	let onStub;
 
 	beforeEach(() => {
-		sinon.restore();
-
 		editor = new Editor();
 		onStub = sinon.stub(editor, 'on');
 
@@ -25,6 +23,10 @@ describe('WProofreaderPlugin', () => {
 		sinon.stub(OptionsManager.prototype, '_getOptions').returns({});
 
 		wproofreaderPlugin = new WProofreaderPlugin(editor);
+	});
+
+	afterEach(() => {
+		sinon.restore();
 	});
 
 	it('should be created', () => {

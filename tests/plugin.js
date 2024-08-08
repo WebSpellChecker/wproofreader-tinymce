@@ -3,6 +3,10 @@ import sinon from 'sinon';
 import WProofreaderPlugin from '../src/wproofreaderplugin';
 
 describe('plugin', () => {
+	afterEach(() => {
+		sinon.restore();
+	});
+
 	it('should register WProofreader plugin', () => {
 		const metadataStub = {};
 		let title;
