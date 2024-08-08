@@ -39,6 +39,10 @@
             }
             return t.localization.disable;
         }
+        destroy() {
+            this._wproofreader = null;
+            this._actions = null;
+        }
     }
     class IconManager {
         addIcon(t) {
@@ -83,6 +87,10 @@
         }
         setOption(t, e) {
             this._options[t] = e;
+        }
+        destroy() {
+            this._editor = null;
+            this._options = null;
         }
     }
     class WProofreader {
@@ -144,6 +152,9 @@
         }
         destroy() {
             this._instance.destroy();
+            this._instance = null;
+            this._editor = null;
+            this._optionsManager = null;
         }
     }
     class WProofreaderPlugin {
@@ -151,6 +162,7 @@
             this._editor = t;
             this._optionsManager = null;
             this._wproofreader = null;
+            this._buttonCreator = null;
             this._init();
         }
         _init() {
@@ -170,7 +182,8 @@
             (new IconManager).addIcon(this._editor);
         }
         _addButton() {
-            new ButtonCreator(this._wproofreader).create(this._editor);
+            this._buttonCreator = new ButtonCreator(this._wproofreader);
+            this._buttonCreator.create(this._editor);
         }
         _subscribeOnEditorEvents() {
             this._editor.on("SwitchMode", (() => this._handleSwitchMode()));
@@ -184,7 +197,10 @@
             }
         }
         _handleRemove() {
+            this._editor = null;
             this._wproofreader.destroy();
+            this._optionsManager.destroy();
+            this._buttonCreator.destroy();
         }
         getMetadata() {
             return {

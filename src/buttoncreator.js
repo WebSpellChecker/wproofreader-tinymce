@@ -91,4 +91,14 @@ export default class ButtonCreator {
 
 		return action.localization.disable;
 	}
+
+	/**
+	 * Destroys the module.
+	 *
+	 * @public
+	 */
+	destroy() {
+		this._wproofreader = null;
+		this._actions = null;
+	}
 }

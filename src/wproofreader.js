@@ -172,9 +172,15 @@ export default class WProofreader {
 	}
 
 	/**
-	 * Destroys {@link WProofreader} instance.
+	 * Destroys the module.
+	 *
+	 * @public
 	 */
 	destroy() {
 		this._instance.destroy();
+
+		this._instance = null;
+		this._editor = null;
+		this._optionsManager = null;
 	}
 }

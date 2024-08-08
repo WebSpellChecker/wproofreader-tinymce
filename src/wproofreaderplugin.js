@@ -39,6 +39,14 @@ export default class WProofreaderPlugin {
 		 */
 		this._wproofreader = null;
 
+		/**
+		 * A {@link ButtonCreator} instance.
+		 *
+		 * @private
+		 * @type {ButtonCreator|Null}
+		 */
+		this._buttonCreator = null;
+
 		this._init();
 	}
 
@@ -88,7 +96,9 @@ export default class WProofreaderPlugin {
 	 * @private
 	 */
 	_addButton() {
-		new ButtonCreator(this._wproofreader).create(this._editor);
+		this._buttonCreator = new ButtonCreator(this._wproofreader);
+
+		this._buttonCreator.create(this._editor);
 	}
 
 	/**
@@ -120,7 +130,11 @@ export default class WProofreaderPlugin {
 	 * @private
 	 */
 	_handleRemove() {
+		this._editor = null;
+
 		this._wproofreader.destroy();
+		this._optionsManager.destroy();
+		this._buttonCreator.destroy();
 	}
 
 	/**

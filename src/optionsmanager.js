@@ -112,4 +112,14 @@ export default class OptionsManager {
 	setOption(option, value) {
 		this._options[option] = value;
 	}
+
+	/**
+	 * Destroys the module.
+	 *
+	 * @public
+	 */
+	destroy() {
+		this._editor = null;
+		this._options = null;
+	}
 }

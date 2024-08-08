@@ -77,11 +77,15 @@ describe('WProofreaderPlugin', () => {
 
 	it('should destroy WProofreder on editor remove', () => {
 		const removeEditorListener = onStub.getCall(1).args[1];
-		const destroyStub = sinon.stub(WProofreader.prototype, 'destroy');
+		const wproofreaderStub = sinon.stub(WProofreader.prototype, 'destroy');
+		const optionsmanagerStub = sinon.stub(OptionsManager.prototype, 'destroy');
+		const buttonCreatorStub = sinon.stub(ButtonCreator.prototype, 'destroy');
 
 		removeEditorListener();
 
-		expect(destroyStub.calledOnce).to.be.true;
+		expect(wproofreaderStub.calledOnce).to.be.true;
+		expect(optionsmanagerStub.calledOnce).to.be.true;
+		expect(buttonCreatorStub.calledOnce).to.be.true;
 	});
 
 	describe('getMetadata method', () => {
