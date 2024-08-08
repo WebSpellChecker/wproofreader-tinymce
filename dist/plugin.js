@@ -149,6 +149,8 @@
     class WProofreaderPlugin {
         constructor(t) {
             this._editor = t;
+            this._optionsManager = null;
+            this._wproofreader = null;
             this._init();
         }
         _init() {

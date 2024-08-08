@@ -9,14 +9,14 @@ export default class WProofreader {
 	 * @public
 	 * @constructor
 	 * @param {Object} editor - A TinyMCE editor instance.
-	 * @param {OptionsManager} optionsManager - A options manager instance.
+	 * @param {OptionsManager} optionsManager - An options manager instance.
 	 */
 	constructor(editor, optionsManager) {
 		/**
 		 * A {@code WEBSPELLCHECKER} instance
 		 *
 		 * @private
-		 * @type {Object}
+		 * @type {Object|Null}
 		 */
 		this._instance = null;
 

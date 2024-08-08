@@ -23,6 +23,22 @@ export default class WProofreaderPlugin {
 		 */
 		this._editor = editor;
 
+		/**
+		 * An {@link OptionsManager} instance.
+		 *
+		 * @private
+		 * @type {OptionsManager|Null}
+		 */
+		this._optionsManager = null;
+
+		/**
+		 * A {@link WProofreader} instance.
+		 *
+		 * @private
+		 * @type {WProofreader|Null}
+		 */
+		this._wproofreader = null;
+
 		this._init();
 	}
 

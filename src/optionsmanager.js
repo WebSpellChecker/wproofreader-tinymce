@@ -96,7 +96,7 @@ export default class OptionsManager {
 	 * @public
 	 * @param {String} option - Option name.
 	 *
-	 * @returns {Any|undefined} - An option value.
+	 * @returns {Any|Undefined} - An option value.
 	 */
 	getOption(option) {
 		return this._options[option];
