@@ -97,7 +97,6 @@ export default class WProofreaderPlugin {
 	 */
 	_addButton() {
 		this._buttonCreator = new ButtonCreator(this._wproofreader);
-
 		this._buttonCreator.create(this._editor);
 	}
 
@@ -131,7 +130,6 @@ export default class WProofreaderPlugin {
 	 */
 	_handleRemove() {
 		this._editor = null;
-
 		this._wproofreader.destroy();
 		this._optionsManager.destroy();
 		this._buttonCreator.destroy();

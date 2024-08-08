@@ -175,7 +175,6 @@ export default class WProofreader {
 	 */
 	destroy() {
 		this._instance && this._instance.destroy && this._instance.destroy();
-
 		this._instance = null;
 		this._editor = null;
 		this._optionsManager = null;
