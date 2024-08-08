@@ -53,21 +53,9 @@ describe('ButtonCreator', () => {
 			addMenuButtonStub = sinon.stub(editor.ui.registry, 'addMenuButton');
 		});
 
-		it('should not create menu buttons if WProofreader is not initialized', () => {
-			sinon.stub(wproofreader, 'isInitialized').returns(false);
-
-			buttonCreator.create(editor);
-
-			getButtons();
-
-			expect(buttons).to.be.an('array');
-			expect(buttons).to.be.empty;
-		});
-
 		it('should create an enable button if WProofreader is disabled', () => {
 			const enableStub = sinon.stub(wproofreader, 'enable');
 
-			sinon.stub(wproofreader, 'isInitialized').returns(true);
 			sinon.stub(wproofreader, 'isDisabled').returns(true);
 
 			buttonCreator.create(editor);
@@ -88,7 +76,6 @@ describe('ButtonCreator', () => {
 		it('should create a disable button if WProofreader is enabled', () => {
 			const disableStub = sinon.stub(wproofreader, 'disable');
 
-			sinon.stub(wproofreader, 'isInitialized').returns(true);
 			sinon.stub(wproofreader, 'isDisabled').returns(false);
 
 			buttonCreator.create(editor);
@@ -109,7 +96,6 @@ describe('ButtonCreator', () => {
 		it('should create an open settings button if WProofreader is enabled', () => {
 			const openSettingsStub = sinon.stub(wproofreader, 'openSettings');
 
-			sinon.stub(wproofreader, 'isInitialized').returns(true);
 			sinon.stub(wproofreader, 'isDisabled').returns(false);
 
 			buttonCreator.create(editor);
@@ -130,7 +116,6 @@ describe('ButtonCreator', () => {
 		it('should create a proofread in dialog button if WProofreader is enabled', () => {
 			const openDialogStub = sinon.stub(wproofreader, 'openDialog');
 
-			sinon.stub(wproofreader, 'isInitialized').returns(true);
 			sinon.stub(wproofreader, 'isDisabled').returns(false);
 
 			buttonCreator.create(editor);

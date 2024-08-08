@@ -132,18 +132,6 @@ describe('WProofreader', () => {
 			});
 		});
 
-		describe('isInitialized method', () => {
-			it('should indicates whether WSC instance is initialized', () => {
-				expect(wproofreader.isInitialized()).to.be.true;
-			});
-
-			it('should indicates whether WSC instance is initialized', () => {
-				wproofreader = new WPRoofreaderWithoutWscInitialization(editor, optionsManager);
-
-				expect(wproofreader.isInitialized()).to.be.false;
-			});
-		});
-
 		describe('enable method', () => {
 			it('should enable WSC instance', () => {
 				wproofreader.enable();
@@ -183,6 +171,12 @@ describe('WProofreader', () => {
 
 				expect(wproofreader.getStaticActions()).to.equal(staticActions);
 				expect(wscInstance.getStaticActions.calledOnce).to.be.true;
+			});
+
+			it('should return empty array if wscInstance is missed', () => {
+				wproofreader._instance = null;
+
+				expect(wproofreader.getStaticActions().length).to.equal(0);
 			});
 		});
 

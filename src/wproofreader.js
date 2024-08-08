@@ -125,17 +125,6 @@ export default class WProofreader {
 	}
 
 	/**
-	 * Checks whether {@code WEBSPELLCHECKER} instance is initialized.
-	 *
-	 * @public
-	 *
-	 * @returns {Boolean} - `true` if the instance is initialized, `false` otherwise.
-	 */
-	isInitialized() {
-		return !!this._instance;
-	}
-
-	/**
 	 * Enables {@code WEBSPELLCHECKER} instance.
 	 *
 	 * @public
@@ -179,7 +168,7 @@ export default class WProofreader {
 	 * @public
 	 */
 	getStaticActions() {
-		return this._instance.getStaticActions();
+		return this._instance ? this._instance.getStaticActions() : [];
 	}
 
 	/**

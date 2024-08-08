@@ -23,9 +23,6 @@
             });
         }
         _getMenuButtons() {
-            if (!this._wproofreader.isInitialized()) {
-                return [];
-            }
             const t = this._wproofreader.isDisabled();
             return this._wproofreader.getStaticActions().filter((e => !t || e.name === "toggle")).map((t => ({
                 type: "menuitem",
@@ -130,9 +127,6 @@
         disable() {
             this._instance.disable();
         }
-        isInitialized() {
-            return !!this._instance;
-        }
         enable() {
             this._instance.enable();
         }
@@ -146,7 +140,7 @@
             this._instance.openDialog();
         }
         getStaticActions() {
-            return this._instance.getStaticActions();
+            return this._instance ? this._instance.getStaticActions() : [];
         }
         destroy() {
             this._instance.destroy();

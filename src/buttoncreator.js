@@ -59,10 +59,6 @@ export default class ButtonCreator {
 	 * @returns {Array<Object>} - An array of menu buttons.
 	 */
 	_getMenuButtons() {
-		if (!this._wproofreader.isInitialized()) {
-			return [];
-		}
-
 		const isDisabled = this._wproofreader.isDisabled();
 
 		return this._wproofreader.getStaticActions()
