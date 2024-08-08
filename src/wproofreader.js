@@ -48,9 +48,6 @@ export default class WProofreader {
 		this._loadWscBundle()
 			.then(() => {
 				this._initOnScriptLoaded();
-			})
-			.catch((error) => {
-				throw new Error(error);
 			});
 	}
 

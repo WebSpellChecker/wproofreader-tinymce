@@ -103,8 +103,6 @@
         _init() {
             this._loadWscBundle().then((() => {
                 this._initOnScriptLoaded();
-            })).catch((t => {
-                throw new Error(t);
             }));
         }
         _loadWscBundle() {
