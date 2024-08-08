@@ -10,8 +10,20 @@ export default class OptionsManager {
 	 * @param {Object} editor - A TinyMCE editor instance.
 	 */
 	constructor(editor) {
+		/**
+		 * A TinyMCE editor instance.
+		 *
+		 * @private
+		 * @type {Object}
+		 */
 		this._editor = editor;
 
+		/**
+		 * A {@code WProofreader} options.
+		 *
+		 * @private
+		 * @type {Object}
+		 */
 		this._options = this._getOptions();
 
 		this._init();

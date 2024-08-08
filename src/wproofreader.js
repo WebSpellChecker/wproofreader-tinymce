@@ -12,8 +12,28 @@ export default class WProofreader {
 	 * @param {OptionsManager} optionsManager - A options manager instance.
 	 */
 	constructor(editor, optionsManager) {
+		/**
+		 * A {@code WEBSPELLCHECKER} instance
+		 *
+		 * @private
+		 * @type {Object}
+		 */
 		this._instance = null;
+
+		/**
+		 * A TinyMCE editor instance.
+		 *
+		 * @private
+		 * @type {Object}
+		 */
 		this._editor = editor;
+
+		/**
+		 * A {@link OptionsManager} instance.
+		 *
+		 * @private
+		 * @type {OptionsManager}
+		 */
 		this._optionsManager = optionsManager;
 
 		this._init();

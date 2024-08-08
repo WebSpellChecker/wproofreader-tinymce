@@ -10,8 +10,20 @@ export default class ButtonCreator {
 	 * @param {WProofreader} wproofreader - A {@link WProofreader} instance.
 	 */
 	constructor(wproofreader) {
+		/**
+		 * A {@link WProofreader} instance.
+		 *
+		 * @private
+		 * @type {WProofreader}
+		 */
 		this._wproofreader = wproofreader;
 
+		/**
+		 * Button actions.
+		 *
+		 * @private
+		 * @type {Object}
+		 */
 		this._actions = {
 			settings: () => this._wproofreader.openSettings(),
 			proofreadDialog: () => this._wproofreader.openDialog(),
@@ -44,7 +56,7 @@ export default class ButtonCreator {
 	 *
 	 * @private
 	 *
-	 * @returns {Array<Object>} - A list of menu buttons.
+	 * @returns {Array<Object>} - An array of menu buttons.
 	 */
 	_getMenuButtons() {
 		if (!this._wproofreader.isInitialized()) {

@@ -15,6 +15,12 @@ export default class WProofreaderPlugin {
 	 * @param {Object} editor - A TinyMCE editor instance.
 	 */
 	constructor(editor) {
+		/**
+		 * A TinyMCE editor instance.
+		 *
+		 * @private
+		 * @type {Object}
+		 */
 		this._editor = editor;
 
 		this._init();
