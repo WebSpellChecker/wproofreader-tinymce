@@ -116,6 +116,9 @@
             return window.tinymce.ScriptLoader.loadScript(t);
         }
         _initOnScriptLoaded() {
+            if (!this._editor || this._editor.removed) {
+                return;
+            }
             if (this._editor.initialized) {
                 this._createInstance();
             } else {
@@ -128,10 +131,14 @@
             window.WEBSPELLCHECKER.init(this._optionsManager.getOptions(), (t => this._handleInstanceCreated(t)));
         }
         _handleInstanceCreated(t) {
-            this._instance = t;
-            if (this._editor.mode.isReadOnly()) {
-                this.disable();
+            if (!this._editor || this._editor.removed) {
+                t.destroy();
+                return;
             }
+            if (this._editor.mode.isReadOnly()) {
+                t.disable();
+            }
+            this._instance = t;
         }
         disable() {
             this._instance.disable();

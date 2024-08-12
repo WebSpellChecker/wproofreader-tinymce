@@ -75,6 +75,10 @@ export default class WProofreader {
 	 * @private
 	 */
 	_initOnScriptLoaded() {
+		if (!this._editor || this._editor.removed) {
+			return;
+		}
+
 		if (this._editor.initialized) {
 			this._createInstance();
 		} else {
@@ -105,11 +109,17 @@ export default class WProofreader {
 	 * @param {Object} instance - Created {@code WEBSPELLCHECKER} instance.
 	 */
 	_handleInstanceCreated(instance) {
-		this._instance = instance;
+		if (!this._editor || this._editor.removed) {
+			instance.destroy();
+
+			return;
+		}
 
 		if (this._editor.mode.isReadOnly()) {
-			this.disable();
+			instance.disable();
 		}
+
+		this._instance = instance;
 	}
 
 	/**

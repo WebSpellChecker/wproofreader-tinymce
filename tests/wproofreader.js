@@ -48,6 +48,21 @@ describe('WProofreader', () => {
 		});
 	});
 
+	it('should not create WSC instance if editor is removed', (done) => {
+		editor.bodyElement = document.createElement('div');
+		editor.initialized = true;
+		editor.inline = true;
+		editor.removed = true;
+
+		new WProofreader(editor, optionsManager);
+
+		setTimeout(() => {
+			expect(window.WEBSPELLCHECKER.init.called).to.be.false;
+
+			done();
+		});
+	});
+
 	it('should create WSC instance for inline editor', (done) => {
 		editor.bodyElement = document.createElement('div');
 		editor.initialized = true;
@@ -88,7 +103,7 @@ describe('WProofreader', () => {
 		});
 	});
 
-	it('should disable instance if editor in readonly', (done) => {
+	it('should disable instance if editor in readonly mode', (done) => {
 		const wscInstance = { disable: sinon.stub() };
 
 		editor.iframeElement = document.createElement('iframe');
@@ -102,6 +117,28 @@ describe('WProofreader', () => {
 			window.WEBSPELLCHECKER.init.getCall(0).args[1](wscInstance);
 
 			expect(wscInstance.disable.calledOnce).to.be.true;
+
+			done();
+		});
+	});
+
+	it('should destroy instance if editor is removed', (done) => {
+		const wscInstance = { destroy: sinon.stub() };
+
+		editor.iframeElement = document.createElement('iframe');
+		editor.initialized = true;
+		editor.inline = false;
+
+		new WProofreader(editor, optionsManager);
+
+		setTimeout(() => {
+			const callback = window.WEBSPELLCHECKER.init.getCall(0);
+
+			editor.removed = true;
+
+			callback.args[1](wscInstance);
+
+			expect(wscInstance.destroy.called).to.be.true;
 
 			done();
 		});
