@@ -19,7 +19,7 @@ export default class OptionsManager {
 		this._editor = editor;
 
 		/**
-		 * A wproofreader options.
+		 * Wproofreader options.
 		 *
 		 * @private
 		 * @type {Object}
