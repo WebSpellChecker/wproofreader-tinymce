@@ -63,6 +63,9 @@
             if (!t) {
                 throw new Error("No WProofreader configuration.");
             }
+            if (typeof t !== "object") {
+                throw new Error("WProofreader options has incorrect type.");
+            }
             return t;
         }
         _init() {

@@ -29,6 +29,13 @@ describe('OptionsManager', () => {
 			expect(() => new OptionsManager(editor)).to.throw('No WProofreader configuration.');
 		});
 
+		it('should throw an error if the WProofreader field value is not an object', () => {
+			getParamStub.reset();
+			getParamStub.returns('service-id');
+
+			expect(() => new OptionsManager(editor)).to.throw('WProofreader options has incorrect type.');
+		});
+
 		it('should set tinymce theme as default, if no other is provided', () => {
 			expect(options.theme).to.equal('tinymce');
 		});

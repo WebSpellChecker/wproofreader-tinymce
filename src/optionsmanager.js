@@ -44,6 +44,10 @@ export default class OptionsManager {
 			throw new Error('No WProofreader configuration.');
 		}
 
+		if (typeof options !== 'object') {
+			throw new Error('WProofreader options has incorrect type.');
+		}
+
 		return options;
 	}
 
