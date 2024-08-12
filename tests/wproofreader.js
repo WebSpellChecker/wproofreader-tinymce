@@ -32,7 +32,7 @@ describe('WProofreader', () => {
 		sinon.restore();
 	});
 
-	it('should subscribe on editor init, if editor is not initialized', (done) => {
+	it('should subscribe on editor init event, if editor is not initialized', (done) => {
 		const subscribeStub = sinon.stub(editor, 'on');
 
 		editor.initialized = false;
@@ -175,7 +175,7 @@ describe('WProofreader', () => {
 				expect(wscInstance.getStaticActions.calledOnce).to.be.true;
 			});
 
-			it('should return empty array if wscInstance is missed', () => {
+			it('should return empty array if WSC instance is missed', () => {
 				wproofreader._instance = null;
 
 				expect(wproofreader.getStaticActions().length).to.equal(0);

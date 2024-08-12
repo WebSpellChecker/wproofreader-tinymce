@@ -1,17 +1,17 @@
 /**
- * The class that provides options management functionality.
+ * A wproofreader options manager.
  */
 export default class OptionsManager {
 	/**
-	 * Creates an instance of the {@link OptionsManager} class.
+	 * Creates an instance of options manager.
 	 *
 	 * @public
 	 * @constructor
-	 * @param {Object} editor - A TinyMCE editor instance.
+	 * @param {Object} editor - An editor instance.
 	 */
 	constructor(editor) {
 		/**
-		 * A TinyMCE editor instance.
+		 * An editor instance.
 		 *
 		 * @private
 		 * @type {Object}
@@ -19,7 +19,7 @@ export default class OptionsManager {
 		this._editor = editor;
 
 		/**
-		 * A {@code WProofreader} options.
+		 * A wproofreader options.
 		 *
 		 * @private
 		 * @type {Object}
@@ -30,12 +30,13 @@ export default class OptionsManager {
 	}
 
 	/**
-	 * Returns {@code WProofreader} options from editor config.
+	 * Returns wproofrader options from editor config.
 	 *
 	 * @private
-	 * @throws {Error} - If the `wproofreader` options aren't provided.
+	 * @throws {Error} - If the wproofreader option isn't provided in the editor config or
+	 * its value is not object type.
 	 *
-	 * @returns {Object} - A {@code WProofreader} options.
+	 * @returns {Object} - A wproofreader options.
 	 */
 	_getOptions() {
 		const options = this._editor.getParam('wproofreader');
@@ -52,7 +53,7 @@ export default class OptionsManager {
 	}
 
 	/**
-	 * Initializes {@link OptionsManager} instance.
+	 * Initializes options manager instance.
 	 *
 	 * @private
 	 */
@@ -62,7 +63,7 @@ export default class OptionsManager {
 	}
 
 	/**
-	 * Sets a {@code tinymce} theme if no other is provided.
+	 * Sets a `tinymce` theme if no other is provided.
 	 *
 	 * @private
 	 */
@@ -73,7 +74,7 @@ export default class OptionsManager {
 	}
 
 	/**
-	 * Sets autoStartup parameter with {@code true} if no value is provided.
+	 * Sets autoStartup parameter with `true` if no value is provided.
 	 *
 	 * @private
 	 */
@@ -84,18 +85,18 @@ export default class OptionsManager {
 	}
 
 	/**
-	 * Returns {@code WProofreader} options.
+	 * Returns wproofreader options.
 	 *
 	 * @public
 	 *
-	 * @returns {Object} - A {@code WProofreader} options.
+	 * @returns {Object} - Wproofreader options.
 	 */
 	getOptions() {
 		return this._options;
 	}
 
 	/**
-	 * Returns the value of the defined option.
+	 * Returns the value of required option.
 	 *
 	 * @public
 	 * @param {String} option - Option name.
@@ -107,7 +108,7 @@ export default class OptionsManager {
 	}
 
 	/**
-	 * Sets the value of the defined option.
+	 * Sets the provided option value.
 	 *
 	 * @public
 	 * @param {String} option - An option name.

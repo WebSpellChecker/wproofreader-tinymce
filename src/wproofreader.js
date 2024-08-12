@@ -1,27 +1,27 @@
 /**
- * The class that provides functionality for creation and managing
- * the {@code WEBSPELLCHECKER} instance.
+ * A wrapper of {@code WEBSPELLCHECKER} instance.
+ * It creates and manages the instance.
  */
 export default class WProofreader {
 	/**
-	 * Creates an instance of the {@link WProofreader} class.
+	 * Creates an instance of wproofreader.
 	 *
 	 * @public
 	 * @constructor
-	 * @param {Object} editor - A TinyMCE editor instance.
+	 * @param {Object} editor - An editor instance.
 	 * @param {OptionsManager} optionsManager - An options manager instance.
 	 */
 	constructor(editor, optionsManager) {
 		/**
-		 * A {@code WEBSPELLCHECKER} instance
+		 * A {@code WEBSPELLCHECKER} instance.
 		 *
 		 * @private
-		 * @type {Object|Null}
+		 * @type {Object|null}
 		 */
 		this._instance = null;
 
 		/**
-		 * A TinyMCE editor instance.
+		 * An editor instance.
 		 *
 		 * @private
 		 * @type {Object}
@@ -29,7 +29,7 @@ export default class WProofreader {
 		this._editor = editor;
 
 		/**
-		 * A {@link OptionsManager} instance.
+		 * A options manager instance.
 		 *
 		 * @private
 		 * @type {OptionsManager}
@@ -40,7 +40,7 @@ export default class WProofreader {
 	}
 
 	/**
-	 * Initializes {@link WProofreader} instance.
+	 * Initializes wproofreader instance.
 	 *
 	 * @private
 	 */
@@ -52,7 +52,7 @@ export default class WProofreader {
 	}
 
 	/**
-	 * Loads {@code WEBSPELLCHECKER} bundle.
+	 * Loads the {@code WEBSPELLCHECKER} bundle.
 	 *
 	 * @private
 	 * @throws {Error} - If the `srcUrl` option parameter isn't provided.
@@ -70,7 +70,7 @@ export default class WProofreader {
 	}
 
 	/**
-	 * Initializes {@link WProofreader} instance once {@code WEBSPELLCHECKER} bundle is loaded.
+	 * Initializes wproofreader instance once {@code WEBSPELLCHECKER} bundle is loaded.
 	 *
 	 * @private
 	 */

@@ -1,17 +1,17 @@
 /**
- * The class that provides a toolbar button creation functionality.
+ * A toolbar button creator.
  */
 export default class ButtonCreator {
 	/**
-	 * Creates an instance of the {@link ButtonCreator} class.
+	 * Creates an instance of toolbar button creator.
 	 *
 	 * @public
 	 * @constructor
-	 * @param {WProofreader} wproofreader - A {@link WProofreader} instance.
+	 * @param {WProofreader} wproofreader - A wproofreader instance.
 	 */
 	constructor(wproofreader) {
 		/**
-		 * A {@link WProofreader} instance.
+		 * A wproofreader instance.
 		 *
 		 * @private
 		 * @type {WProofreader}
@@ -19,7 +19,7 @@ export default class ButtonCreator {
 		this._wproofreader = wproofreader;
 
 		/**
-		 * Button actions.
+		 * The actions of a button.
 		 *
 		 * @private
 		 * @type {Object}
@@ -38,10 +38,10 @@ export default class ButtonCreator {
 	}
 
 	/**
-	 * Creates WProofreader toolbar button.
+	 * Creates toolbar button.
 	 *
 	 * @public
-	 * @param {Object} editor - A TinyMCE editor instance.
+	 * @param {Object} editor - An editor instance.
 	 */
 	create(editor) {
 		editor.ui.registry.addMenuButton('wproofreader', {
@@ -52,11 +52,11 @@ export default class ButtonCreator {
 	}
 
 	/**
-	 * Returns the menu buttons.
+	 * Returns menu buttons.
 	 *
 	 * @private
 	 *
-	 * @returns {Array<Object>} - An array of menu buttons.
+	 * @returns {Array.<Object>} - Menu buttons.
 	 */
 	_getMenuButtons() {
 		const isDisabled = this._wproofreader.isDisabled();

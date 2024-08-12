@@ -4,19 +4,19 @@ import OptionsManager from './optionsmanager';
 import WProofreader from './wproofreader';
 
 /**
- * The class that provides WProofreader plugin functionality.
+ * A WProofreader plugin for TinyMCE editor.
  */
 export default class WProofreaderPlugin {
 	/**
-	 * Creates an instance of the {@link WProofreaderPlugin} class.
+	 * Creates an instance of wproofreader plugin.
 	 *
 	 * @public
 	 * @constructor
-	 * @param {Object} editor - A TinyMCE editor instance.
+	 * @param {Object} editor - An editor instance.
 	 */
 	constructor(editor) {
 		/**
-		 * A TinyMCE editor instance.
+		 * An editor instance.
 		 *
 		 * @private
 		 * @type {Object}
@@ -24,26 +24,26 @@ export default class WProofreaderPlugin {
 		this._editor = editor;
 
 		/**
-		 * An {@link OptionsManager} instance.
+		 * An options manager instance.
 		 *
 		 * @private
-		 * @type {OptionsManager|Null}
+		 * @type {OptionsManager|null}
 		 */
 		this._optionsManager = null;
 
 		/**
-		 * A {@link WProofreader} instance.
+		 * A wproofreader instance.
 		 *
 		 * @private
-		 * @type {WProofreader|Null}
+		 * @type {WProofreader|null}
 		 */
 		this._wproofreader = null;
 
 		/**
-		 * A {@link ButtonCreator} instance.
+		 * A button creator instance.
 		 *
 		 * @private
-		 * @type {ButtonCreator|Null}
+		 * @type {ButtonCreator|null}
 		 */
 		this._buttonCreator = null;
 
@@ -51,7 +51,7 @@ export default class WProofreaderPlugin {
 	}
 
 	/**
-	 * Initializes {@link WProofreaderPlugin} instance.
+	 * Initializes wproofreader plugin instance.
 	 *
 	 * @private
 	 */
@@ -64,7 +64,7 @@ export default class WProofreaderPlugin {
 	}
 
 	/**
-	 * Creates a {@link OptionsManager} instance.
+	 * Creates a options manager instance.
 	 *
 	 * @private
 	 */
@@ -73,7 +73,7 @@ export default class WProofreaderPlugin {
 	}
 
 	/**
-	 * Creates a {@link WProofreader} instance.
+	 * Creates a wproofreader instance.
 	 *
 	 * @private
 	 */
@@ -82,7 +82,7 @@ export default class WProofreaderPlugin {
 	}
 
 	/**
-	 * Adds {@code WProofreader} icon.
+	 * Adds wproofreader icon.
 	 *
 	 * @private
 	 */
@@ -91,7 +91,7 @@ export default class WProofreaderPlugin {
 	}
 
 	/**
-	 * Adds {@code WProofreader} button.
+	 * Adds wproofreader button.
 	 *
 	 * @private
 	 */

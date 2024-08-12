@@ -1,12 +1,12 @@
 /**
- * The class that provides an icon management functionality.
+ * A wproofreader icons manager.
  */
 export default class IconManager {
 	/**
-	 * Adds a WProofreader icon to the editor.
+	 * Adds wproofreader icon to the editor.
 	 *
 	 * @public
-	 * @param {Object} editor - A TinyMCE editor instance.
+	 * @param {Object} editor - An editor instance.
 	 */
 	addIcon(editor) {
 		editor.ui.registry.addIcon('wproofreader', this._getIcon());

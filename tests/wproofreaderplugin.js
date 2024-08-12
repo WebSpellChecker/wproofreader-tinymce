@@ -43,7 +43,7 @@ describe('WProofreaderPlugin', () => {
 		expect(onStub.getCall(1).args[0]).to.be.equal('remove');
 	});
 
-	it('should enable WProofreader when readonly mode switching off', () => {
+	it('should enable wproofreader when readonly mode switching off', () => {
 		const switchModeListener = onStub.getCall(0).args[1];
 		const enableStub = sinon.stub(WProofreader.prototype, 'enable');
 		const disableStub = sinon.stub(WProofreader.prototype, 'disable');
@@ -59,7 +59,7 @@ describe('WProofreaderPlugin', () => {
 		expect(disableStub.calledOnce).to.be.true;
 	});
 
-	it('should disable WProofreader when readonly mode switching on', () => {
+	it('should disable wproofreader when readonly mode switching on', () => {
 		const switchModeListener = onStub.getCall(0).args[1];
 		const enableStub = sinon.stub(WProofreader.prototype, 'enable');
 		const disableStub = sinon.stub(WProofreader.prototype, 'disable');
@@ -75,7 +75,7 @@ describe('WProofreaderPlugin', () => {
 		expect(enableStub.calledOnce).to.be.true;
 	});
 
-	it('should destroy WProofreder on editor remove', () => {
+	it('should destroy wproofreader on editor remove', () => {
 		const removeEditorListener = onStub.getCall(1).args[1];
 		const wproofreaderStub = sinon.stub(WProofreader.prototype, 'destroy');
 		const optionsmanagerStub = sinon.stub(OptionsManager.prototype, 'destroy');
