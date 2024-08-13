@@ -101,7 +101,7 @@ export default class OptionsManager {
 	 * @public
 	 * @param {String} option - Option name.
 	 *
-	 * @returns {Any|Undefined} - An option value.
+	 * @returns {*} - An option value.
 	 */
 	getOption(option) {
 		return this._options[option];
@@ -112,7 +112,7 @@ export default class OptionsManager {
 	 *
 	 * @public
 	 * @param {String} option - An option name.
-	 * @param {Any} value - An option value.
+	 * @param {*} value - An option value.
 	 */
 	setOption(option, value) {
 		this._options[option] = value;
