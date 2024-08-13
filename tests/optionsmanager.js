@@ -22,7 +22,7 @@ describe('OptionsManager', () => {
 	});
 
 	describe('initialization', () => {
-		it('should throw error if wproofreader options not passed', () => {
+		it('should throw an error if wproofreader options are not passed', () => {
 			getParamStub.reset();
 			getParamStub.returns(null);
 
