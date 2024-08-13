@@ -103,7 +103,7 @@ describe('WProofreader', () => {
 		});
 	});
 
-	it('should disable instance if editor in readonly mode', (done) => {
+	it('should disable instance if editor is in readonly mode', (done) => {
 		const wscInstance = { disable: sinon.stub() };
 
 		editor.iframeElement = document.createElement('iframe');
