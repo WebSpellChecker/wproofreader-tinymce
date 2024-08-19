@@ -7,9 +7,9 @@
 	<script src="https://cdn.tiny.cloud/1/8dw5ikeotv79zgkkf8jp7xuknfzlpfymuo7hsnyqnqm4keei/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>	
 
 	<script>
-		tinymce.init({
-			selector: '.tinymce',
+		const config = {
 			menubar: false,
+			height: 200,
 			toolbar: 'undo redo | bold italic underline | wproofreader',
 			external_plugins: {
 				wproofreader: 'http://localhost:5000/dist/plugin.min.js'
@@ -21,12 +21,51 @@
 				servicePath: '/',
 				srcUrl: 'https://svc.webspellchecker.net/spellcheck31/wscbundle/wscbundle.js'
 			}
+		};
+
+		tinymce.init({
+			...config,
+			selector: '.tinymce-editable'
+		});
+
+		tinymce.init({
+			...config,
+			selector: '.tinymce-partial-editable',
+			editable_root: false,
+			editable_class: 'editable'
+		});
+
+		tinymce.init({
+			...config,
+			selector: '.tinymce-non-editable',
+			editable_root: false
 		});
 	</script>
 </head>
 <body>
-	<textarea class="tinymce">
-		<p>Enter you text here. Hover on the marked words for intant correction suggestions. To got the whole text checked at once, switch to the Proofread in dialog mode in the editor settings.</p>
-	</textarea>
+	<div class="container">
+		<textarea class="tinymce-editable">
+			<p>Enter you text here. Hover on the marked words for intant correction suggestions. To got the whole text checked at once, switch to the Proofread in dialog mode in the editor settings.</p>
+		</textarea>
+	</div>
+
+	<div class="container">
+		<textarea class="tinymce-partial-editable">
+			<p>Enter you text here. Hover on the <span class="editable">marked words for intant correction suggestions. To got the whole text checked at once,</span> switch to the Proofread in dialog mode in the editor settings.</p>
+			<p class="editable">Enter you text here. Hover on the marked words for intant correction suggestions. To got the whole text checked at once, switch to the Proofread in dialog mode in the editor settings.</p>
+		</textarea>
+	</div>
+
+	<div class="container">
+		<textarea class="tinymce-non-editable">
+			<p>Enter you text here. Hover on the marked words for intant correction suggestions. To got the whole text checked at once, switch to the Proofread in dialog mode in the editor settings.</p>
+		</textarea>
+	</div>
+		
+	<style>
+		.container {
+			margin-bottom: 30px;
+		}
+	</style>
 </body>
 </html>
