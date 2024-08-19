@@ -19,6 +19,10 @@ const server = (env) => {
 					directory: path.join(__dirname, 'dist'),
 					publicPath: '/dist',
 					watch: true
+				},
+				{
+					directory: path.join(__dirname, 'node_modules/tinymce'),
+					publicPath: '/tinymce',
 				}
 			],
 			devMiddleware: {

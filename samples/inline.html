@@ -4,12 +4,14 @@
 	<meta charset="utf-8" />
 	<title>WProofreader TinyMCE plugin</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="https://cdn.tiny.cloud/1/8dw5ikeotv79zgkkf8jp7xuknfzlpfymuo7hsnyqnqm4keei/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>	
+	<script src="../tinymce/tinymce.min.js" referrerpolicy="origin"></script>
+
 	<script>
 		const config = {
 			inline: true,
 			menubar: false,
 			toolbar: 'undo redo | bold italic underline | wproofreader',
+			license_key: 'gpl',
 			external_plugins: {
 				wproofreader: 'http://localhost:5000/dist/plugin.min.js'
 			},
