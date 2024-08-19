@@ -6,8 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://cdn.tiny.cloud/1/8dw5ikeotv79zgkkf8jp7xuknfzlpfymuo7hsnyqnqm4keei/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>	
 	<script>
-		tinymce.init({
-			selector: '.tinymce',
+		const config = {
 			inline: true,
 			menubar: false,
 			toolbar: 'undo redo | bold italic underline | wproofreader',
@@ -21,21 +20,50 @@
 				servicePath: '/',
 				srcUrl: 'https://svc.webspellchecker.net/spellcheck31/wscbundle/wscbundle.js'
 			}
+		};
+
+		tinymce.init({
+			...config,
+			selector: '.tinymce-editable'
+		});
+
+		tinymce.init({
+			...config,
+			selector: '.tinymce-partial-editable',
+			editable_root: false,
+			editable_class: 'editable'
+		});
+
+		tinymce.init({
+			...config,
+			selector: '.tinymce-non-editable',
+			editable_root: false,
 		});
 	</script>
 </head>
 <body>
-	<div class="tinymce">
-		<p>Enter you text here. Hover on the marked words for intant correction suggestions. To got the whole text checked at once, switch to the Proofread in dialog mode in the editor settings.</p>
+	<div class="container">
+		<div class="tinymce-editable">
+			<p>Enter you text here. Hover on the marked words for intant correction suggestions. To got the whole text checked at once, switch to the Proofread in dialog mode in the editor settings.</p>
+		</div>
 	</div>
 
-	<div class="tinymce">
-		<p>Enter you other text here. Make a few errors to interract with our service.</p>
+	<div class="container">
+		<div class="tinymce-partial-editable">
+			<p>Enter you text here. Hover on the <span class="editable">marked words for intant correction suggestions. To got the whole text checked at once,</span> switch to the Proofread in dialog mode in the editor settings.</p>
+			<p class="editable">Enter you text here. Hover on the marked words for intant correction suggestions. To got the whole text checked at once, switch to the Proofread in dialog mode in the editor settings.</p>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="tinymce-non-editable">
+			<p>Enter you text here. Hover on the <span class="editable">marked words for intant correction suggestions. To got the whole text checked at once,</span> switch to the Proofread in dialog mode in the editor settings.</p>
+		</div>
 	</div>
 
 	<style>
-		.tinymce {
-			margin-top: 100px;
+		.container {
+			margin-top: 70px;
 		}
 	</style>
 </body>
