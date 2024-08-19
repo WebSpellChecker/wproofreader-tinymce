@@ -1,7 +1,7 @@
 import sinon from 'sinon';
 import { expect } from 'chai';
-import WProofreader from '../src/wproofreader';
-import OptionsManager from '../src/optionsmanager';
+import WProofreader from '../../src/wproofreader';
+import OptionsManager from '../../src/optionsmanager';
 import Editor from './mocks/editor';
 import WscInstance from './mocks/wscinstance';
 

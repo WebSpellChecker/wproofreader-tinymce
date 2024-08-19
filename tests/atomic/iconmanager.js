@@ -1,6 +1,6 @@
 import sinon from 'sinon';
 import { expect } from 'chai';
-import IconManager from '../src/iconmanager';
+import IconManager from '../../src/iconmanager';
 import Editor from './mocks/editor';
 
 describe('IconManager', () => {
