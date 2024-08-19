@@ -30,6 +30,9 @@ describe('WProofreader', () => {
 
 	afterEach(() => {
 		sinon.restore();
+
+		delete window.tinymce;
+		delete window.WEBSPELLCHECKER;
 	});
 
 	it('should subscribe on editor init event, if editor is not initialized', (done) => {
