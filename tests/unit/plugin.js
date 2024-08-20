@@ -32,5 +32,7 @@ describe('plugin', () => {
 		const metadata = callback();
 
 		expect(metadata).to.equal(metadataStub);
+
+		delete window.tinymce;
 	});
 });
