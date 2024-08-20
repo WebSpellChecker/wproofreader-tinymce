@@ -5,6 +5,7 @@ export default class WscInstance {
 		this.disable = sinon.stub();
 		this.enable = sinon.stub();
 		this.isDisabled = sinon.stub();
+		this.openSettings = sinon.stub();
 		this.openDialog = sinon.stub();
 		this.getStaticActions = sinon.stub();
 		this.destroy = sinon.stub();
