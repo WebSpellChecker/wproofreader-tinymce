@@ -73,6 +73,8 @@ describe('WProofreader plugin', () => {
 			});
 
 			it('should display buttons for active WProofreader', (done) => {
+				const expected = ['Disable', 'Settings', 'Proofread in dialog'];
+
 				window.WEBSPELLCHECKER.getInstances()[0].enable();
 
 				button.click();
@@ -84,8 +86,8 @@ describe('WProofreader plugin', () => {
 					expect(menu).to.be.exist;
 					expect(items.length).to.equal(3);
 
-					['Disable', 'Settings', 'Proofread in dialog'].forEach((expected, index) => {
-						expect(items[index].innerText).to.be.equal(expected);
+					expected.forEach((item, index) => {
+						expect(items[index].innerText).to.be.equal(item);
 					});
 
 					done();
@@ -93,6 +95,8 @@ describe('WProofreader plugin', () => {
 			});
 
 			it('should display button for disabled WProofreader', (done) => {
+				const expected = ['Enable'];
+
 				window.WEBSPELLCHECKER.getInstances()[0].disable();
 
 				button.click();
@@ -104,8 +108,8 @@ describe('WProofreader plugin', () => {
 					expect(menu).to.be.exist;
 					expect(items.length).to.equal(1);
 
-					['Enable'].forEach((expected, index) => {
-						expect(items[index].innerText).to.be.equal(expected);
+					expected.forEach((item, index) => {
+						expect(items[index].innerText).to.be.equal(item);
 					});
 
 					done();
