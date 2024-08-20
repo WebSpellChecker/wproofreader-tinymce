@@ -12,7 +12,7 @@ module.exports = function (config) {
 
 		// list of files / patterns to load in the browser
 		files: [
-			'tests/**/*.js'
+			'tests/unit/**/*.js'
 		],
 
 		// list of files / patterns to exclude
@@ -22,7 +22,7 @@ module.exports = function (config) {
 		// preprocess matching files before serving them to the browser
 		// available preprocessors: https://www.npmjs.com/search?q=keywords:karma-preprocessor
 		preprocessors: {
-			'tests/**/*.js': ['webpack', 'sourcemap'],
+			'tests/unit/**/*.js': ['webpack', 'sourcemap'],
 		},
 		webpack: {
 			mode: 'development',
