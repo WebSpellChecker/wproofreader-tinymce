@@ -12,7 +12,12 @@ module.exports = function (config) {
 
 		// list of files / patterns to load in the browser
 		files: [
-			'tests/unit/**/*.js'
+			{ pattern: 'tests/unit/**/*.js' },
+			{ pattern: 'tests/integration/**/*.js' },
+			{ pattern: 'dist/**/*.js', included: false },
+			{ pattern: 'tests/mocks/wscbundle.js', included: false },
+			{ pattern: 'node_modules/tinymce/**/*.js', included: false },
+			{ pattern: 'node_modules/tinymce/**/*.css', included: false }
 		],
 
 		// list of files / patterns to exclude
@@ -23,6 +28,7 @@ module.exports = function (config) {
 		// available preprocessors: https://www.npmjs.com/search?q=keywords:karma-preprocessor
 		preprocessors: {
 			'tests/unit/**/*.js': ['webpack', 'sourcemap'],
+			'tests/integration/**/*.js': ['webpack', 'sourcemap']
 		},
 		webpack: {
 			mode: 'development',

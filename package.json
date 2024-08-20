@@ -5,8 +5,8 @@
   "scripts": {
     "build": "webpack --config webpack.prod.js --env mode=production",
     "start": "webpack-dev-server --config webpack.dev.js --env mode=development",
-    "test": "karma start",
-    "test-dev": "karma start --auto-watch --no-single-run",
+    "test": "npm run build && karma start",
+    "test-dev": "npm run build && karma start --auto-watch --no-single-run",
     "lint": "eslint --quiet ."
   },
   "repository": {
