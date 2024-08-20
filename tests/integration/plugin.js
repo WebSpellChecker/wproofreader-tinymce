@@ -2,7 +2,7 @@ import sinon from 'sinon';
 import { expect } from 'chai';
 
 describe('WProofreader plugin', () => {
-	before(async () => {
+	before(() => {
 		return new Promise((resolve) => {
 			const script = document.createElement('script');
 
@@ -21,7 +21,7 @@ describe('WProofreader plugin', () => {
 		let div;
 		let editor;
 
-		beforeEach(async () => {
+		beforeEach(() => {
 			div = document.createElement('div');
 			document.body.append(div);
 
