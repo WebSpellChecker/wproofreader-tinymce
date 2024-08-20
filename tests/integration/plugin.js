@@ -26,8 +26,8 @@ describe('WProofreader plugin', () => {
 			document.body.append(div);
 
 			return createEditor(div)
-				.then((createdEditor) => {
-					editor = createdEditor;
+				.then((editors) => {
+					[editor] = editors;
 				});
 		});
 
@@ -116,24 +116,19 @@ describe('WProofreader plugin', () => {
 });
 
 function createEditor(target) {
-	return new Promise((resolve) => {
-		window.tinymce.init({
-			target,
-			license_key: 'gpl',
-			toolbar: 'undo redo | bold italic underline | wproofreader',
-			external_plugins: {
-				wproofreader: 'http://localhost:9876/base/dist/plugin.min.js'
-			},
-			wproofreader: {
-				serviceProtocol: 'http',
-				serviceHost: 'localhost',
-				servicePort: '2880',
-				servicePath: '/',
-				srcUrl: 'http://localhost:9876/base/tests/mocks/wscbundle.js'
-			},
-			init_instance_callback(editor) {
-				resolve(editor);
-			}
-		});
+	return window.tinymce.init({
+		target,
+		license_key: 'gpl',
+		toolbar: 'undo redo | bold italic underline | wproofreader',
+		external_plugins: {
+			wproofreader: 'http://localhost:9876/base/dist/plugin.min.js'
+		},
+		wproofreader: {
+			serviceProtocol: 'http',
+			serviceHost: 'localhost',
+			servicePort: '2880',
+			servicePath: '/',
+			srcUrl: 'http://localhost:9876/base/tests/mocks/wscbundle.js'
+		},
 	});
 }
