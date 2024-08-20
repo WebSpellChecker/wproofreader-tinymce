@@ -164,7 +164,7 @@ describe('WProofreader', () => {
 		});
 
 		describe('disable method', () => {
-			it('should not fall on uninitialized instance method call', () => {
+			it('should not throw an error on uninitialized instance method call', () => {
 				const instance = new WPRoofreaderWithoutWscInitialization(editor, optionsManager, null);
 
 				expect(() => instance.disable()).to.not.throw();
@@ -178,7 +178,7 @@ describe('WProofreader', () => {
 		});
 
 		describe('enable method', () => {
-			it('should not fall on uninitialized instance method call', () => {
+			it('should not throw an error on uninitialized instance method call', () => {
 				const instance = new WPRoofreaderWithoutWscInitialization(editor, optionsManager, null);
 
 				expect(() => instance.enable()).to.not.throw();
@@ -192,7 +192,7 @@ describe('WProofreader', () => {
 		});
 
 		describe('isDisabled method', () => {
-			it('should not fall on uninitialized instance method call', () => {
+			it('should not throw an error on uninitialized instance method call', () => {
 				const instance = new WPRoofreaderWithoutWscInitialization(editor, optionsManager, null);
 
 				expect(() => instance.isDisabled()).to.not.throw();
@@ -214,7 +214,7 @@ describe('WProofreader', () => {
 		});
 
 		describe('openSettings method', () => {
-			it('should not fall on uninitialized instance method call', () => {
+			it('should not throw an error on uninitialized instance method call', () => {
 				const instance = new WPRoofreaderWithoutWscInitialization(editor, optionsManager, null);
 
 				expect(() => instance.openSettings()).to.not.throw();
@@ -228,7 +228,7 @@ describe('WProofreader', () => {
 		});
 
 		describe('openDialog method', () => {
-			it('should not fall on uninitialized instance method call', () => {
+			it('should not throw an error on uninitialized instance method call', () => {
 				const instance = new WPRoofreaderWithoutWscInitialization(editor, optionsManager, null);
 
 				expect(() => instance.openDialog()).to.not.throw();
