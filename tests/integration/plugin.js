@@ -38,7 +38,7 @@ describe('WProofreader plugin', () => {
 			div.remove();
 		});
 
-		it('should initialize editor', () => {
+		it('should initialize TinyMCE editor', () => {
 			expect(editor).to.be.exist;
 			expect(editor.initialized).to.be.true;
 		});
@@ -91,7 +91,7 @@ describe('WProofreader plugin', () => {
 					});
 
 					done();
-				});
+				}, 0);
 			});
 
 			it('should display defined buttons if WProofreader is disabled', (done) => {
@@ -113,7 +113,7 @@ describe('WProofreader plugin', () => {
 					});
 
 					done();
-				});
+				}, 0);
 			});
 		});
 	});
