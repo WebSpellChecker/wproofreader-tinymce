@@ -78,15 +78,15 @@ describe('WProofreader plugin', () => {
 				button.click();
 
 				setTimeout(() => {
-					const expected = JSON.stringify(['Disable', 'Settings', 'Proofread in dialog']);
 					const menu = document.querySelector('.tox-selected-menu');
-					const items = [...document
-						.querySelectorAll('.tox-collection__item .tox-collection__item-label')]
-						.map((item) => item.innerText);
+					const items = document.querySelectorAll('.tox-collection__item .tox-collection__item-label');
 
 					expect(menu).to.be.exist;
 					expect(items.length).to.equal(3);
-					expect(JSON.stringify(items)).to.equal(expected);
+
+					['Disable', 'Settings', 'Proofread in dialog'].forEach((expected, index) => {
+						expect(items[index].innerText).to.be.equal(expected);
+					});
 
 					done();
 				});
@@ -98,15 +98,15 @@ describe('WProofreader plugin', () => {
 				button.click();
 
 				setTimeout(() => {
-					const expected = JSON.stringify(['Enable']);
 					const menu = document.querySelector('.tox-selected-menu');
-					const items = [...document
-						.querySelectorAll('.tox-collection__item .tox-collection__item-label')]
-						.map((item) => item.innerText);
+					const items = document.querySelectorAll('.tox-collection__item .tox-collection__item-label');
 
 					expect(menu).to.be.exist;
 					expect(items.length).to.equal(1);
-					expect(JSON.stringify(items)).to.equal(expected);
+
+					['Enable'].forEach((expected, index) => {
+						expect(items[index].innerText).to.be.equal(expected);
+					});
 
 					done();
 				});
