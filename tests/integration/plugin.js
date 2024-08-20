@@ -13,7 +13,7 @@ describe('WProofreader plugin', () => {
 		});
 	});
 
-	it('should load editor', () => {
+	it('should load TinyMCE editor', () => {
 		expect(window.tinymce).to.be.exist;
 	});
 
@@ -38,16 +38,16 @@ describe('WProofreader plugin', () => {
 			div.remove();
 		});
 
-		it('should be initialized', () => {
+		it('should initialize editor', () => {
 			expect(editor).to.be.exist;
 			expect(editor.initialized).to.be.true;
 		});
 
-		it('should load bundle', () => {
+		it('should load WSC bundle', () => {
 			expect(window.WEBSPELLCHECKER).to.be.exist;
 		});
 
-		it('should add toolbar button', () => {
+		it('should add a toolbar button', () => {
 			const button = document.querySelector("button[data-mce-name='wproofreader']");
 
 			expect(button).to.be.exist;
@@ -72,7 +72,7 @@ describe('WProofreader plugin', () => {
 				button = document.querySelector("button[data-mce-name='wproofreader']");
 			});
 
-			it('should display buttons for active WProofreader', (done) => {
+			it('should display defined buttons if WProofreader is enabled', (done) => {
 				const expected = ['Disable', 'Settings', 'Proofread in dialog'];
 
 				window.WEBSPELLCHECKER.getInstances()[0].enable();
@@ -94,7 +94,7 @@ describe('WProofreader plugin', () => {
 				});
 			});
 
-			it('should display button for disabled WProofreader', (done) => {
+			it('should display defined buttons if WProofreader is disabled', (done) => {
 				const expected = ['Enable'];
 
 				window.WEBSPELLCHECKER.getInstances()[0].disable();
