@@ -1,9 +1,9 @@
 import sinon from 'sinon';
 import { expect } from 'chai';
-import WProofreader from '../src/wproofreader';
-import OptionsManager from '../src/optionsmanager';
-import Editor from './mocks/editor';
-import WscInstance from './mocks/wscinstance';
+import WProofreader from '../../src/wproofreader';
+import OptionsManager from '../../src/optionsmanager';
+import Editor from '../mocks/editor';
+import WscInstance from '../mocks/wscinstance';
 
 describe('WProofreader', () => {
 	const srcUrl = 'https://svc.webspellchecker.net/spellcheck31/wscbundle/wscbundle.js';

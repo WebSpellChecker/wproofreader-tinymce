@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import sinon from 'sinon';
-import WProofreaderPlugin from '../src/wproofreaderplugin';
+import WProofreaderPlugin from '../../src/wproofreaderplugin';
 
 describe('plugin', () => {
 	afterEach(() => {
@@ -24,7 +24,7 @@ describe('plugin', () => {
 		sinon.stub(WProofreaderPlugin.prototype, 'getMetadata').returns(metadataStub);
 
 		// eslint-disable-next-line global-require
-		require('../src/plugin');
+		require('../../src/plugin');
 
 		expect(title).to.be.equal('wproofreader');
 		expect(callback).to.a('function');
