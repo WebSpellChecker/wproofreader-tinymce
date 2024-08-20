@@ -128,7 +128,7 @@ export default class WProofreader {
 	 * @public
 	 */
 	disable() {
-		this._instance.disable();
+		this._instance?.disable();
 	}
 
 	/**
@@ -137,7 +137,7 @@ export default class WProofreader {
 	 * @public
 	 */
 	enable() {
-		this._instance.enable();
+		this._instance?.enable();
 	}
 
 	/**
@@ -148,7 +148,7 @@ export default class WProofreader {
 	 * @returns {Boolean} - `true` if the instance is disabled, `false` otherwise.
 	 */
 	isDisabled() {
-		return this._instance.isDisabled();
+		return this._instance?.isDisabled();
 	}
 
 	/**
@@ -157,7 +157,7 @@ export default class WProofreader {
 	 * @public
 	 */
 	openSettings() {
-		this._instance.openSettings();
+		this._instance?.openSettings();
 	}
 
 	/**
@@ -166,7 +166,7 @@ export default class WProofreader {
 	 * @public
 	 */
 	openDialog() {
-		this._instance.openDialog();
+		this._instance?.openDialog();
 	}
 
 	/**

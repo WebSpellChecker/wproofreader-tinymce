@@ -164,6 +164,12 @@ describe('WProofreader', () => {
 		});
 
 		describe('disable method', () => {
+			it('should not throw an error on uninitialized instance method call', () => {
+				const instance = new WPRoofreaderWithoutWscInitialization(editor, optionsManager, null);
+
+				expect(() => instance.disable()).to.not.throw();
+			});
+
 			it('should disable WSC instance', () => {
 				wproofreader.disable();
 
@@ -172,6 +178,12 @@ describe('WProofreader', () => {
 		});
 
 		describe('enable method', () => {
+			it('should not throw an error on uninitialized instance method call', () => {
+				const instance = new WPRoofreaderWithoutWscInitialization(editor, optionsManager, null);
+
+				expect(() => instance.enable()).to.not.throw();
+			});
+
 			it('should enable WSC instance', () => {
 				wproofreader.enable();
 
@@ -180,6 +192,12 @@ describe('WProofreader', () => {
 		});
 
 		describe('isDisabled method', () => {
+			it('should not throw an error on uninitialized instance method call', () => {
+				const instance = new WPRoofreaderWithoutWscInitialization(editor, optionsManager, null);
+
+				expect(() => instance.isDisabled()).to.not.throw();
+			});
+
 			it('should indicates whether WSC instance is disabled', () => {
 				wscInstance.isDisabled.returns(true);
 
@@ -195,7 +213,27 @@ describe('WProofreader', () => {
 			});
 		});
 
+		describe('openSettings method', () => {
+			it('should not throw an error on uninitialized instance method call', () => {
+				const instance = new WPRoofreaderWithoutWscInitialization(editor, optionsManager, null);
+
+				expect(() => instance.openSettings()).to.not.throw();
+			});
+
+			it('should open WSC instance dialog', () => {
+				wproofreader.openSettings();
+
+				expect(wscInstance.openSettings.calledOnce).to.be.true;
+			});
+		});
+
 		describe('openDialog method', () => {
+			it('should not throw an error on uninitialized instance method call', () => {
+				const instance = new WPRoofreaderWithoutWscInitialization(editor, optionsManager, null);
+
+				expect(() => instance.openDialog()).to.not.throw();
+			});
+
 			it('should open WSC instance dialog', () => {
 				wproofreader.openDialog();
 

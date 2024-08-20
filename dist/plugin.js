@@ -141,19 +141,19 @@
             this._instance = t;
         }
         disable() {
-            this._instance.disable();
+            this._instance?.disable();
         }
         enable() {
-            this._instance.enable();
+            this._instance?.enable();
         }
         isDisabled() {
-            return this._instance.isDisabled();
+            return this._instance?.isDisabled();
         }
         openSettings() {
-            this._instance.openSettings();
+            this._instance?.openSettings();
         }
         openDialog() {
-            this._instance.openDialog();
+            this._instance?.openDialog();
         }
         getStaticActions() {
             return this._instance ? this._instance.getStaticActions() : [];
