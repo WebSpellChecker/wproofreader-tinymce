@@ -5,7 +5,7 @@ import WProofreader from '../../src/wproofreader';
 import IconManager from '../../src/iconmanager';
 import WProofreaderPlugin from '../../src/wproofreaderplugin';
 import OptionsManager from '../../src/optionsmanager';
-import Editor from './mocks/editor';
+import Editor from '../mocks/editor';
 
 describe('WProofreaderPlugin', () => {
 	let iconStub;

@@ -1,6 +1,6 @@
 import sinon from 'sinon';
 import { expect } from 'chai';
-import Editor from './mocks/editor';
+import Editor from '../mocks/editor';
 import OptionsManager from '../../src/optionsmanager';
 
 describe('OptionsManager', () => {

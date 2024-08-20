@@ -2,8 +2,8 @@ import sinon from 'sinon';
 import { expect } from 'chai';
 import WProofreader from '../../src/wproofreader';
 import OptionsManager from '../../src/optionsmanager';
-import Editor from './mocks/editor';
-import WscInstance from './mocks/wscinstance';
+import Editor from '../mocks/editor';
+import WscInstance from '../mocks/wscinstance';
 
 describe('WProofreader', () => {
 	const srcUrl = 'https://svc.webspellchecker.net/spellcheck31/wscbundle/wscbundle.js';
@@ -167,6 +167,12 @@ describe('WProofreader', () => {
 		});
 
 		describe('disable method', () => {
+			it('should not fall on uninitialized instance method call', () => {
+				const uninitialized = new WPRoofreaderWithoutWscInitialization(editor, optionsManager);
+
+				expect(() => uninitialized.disable()).to.not.throw();
+			});
+
 			it('should disable WSC instance', () => {
 				wproofreader.disable();
 
@@ -175,6 +181,12 @@ describe('WProofreader', () => {
 		});
 
 		describe('enable method', () => {
+			it('should not fall on uninitialized instance method call', () => {
+				const uninitialized = new WPRoofreaderWithoutWscInitialization(editor, optionsManager);
+
+				expect(() => uninitialized.enable()).to.not.throw();
+			});
+
 			it('should enable WSC instance', () => {
 				wproofreader.enable();
 
@@ -183,6 +195,12 @@ describe('WProofreader', () => {
 		});
 
 		describe('isDisabled method', () => {
+			it('should not fall on uninitialized instance method call', () => {
+				const uninitialized = new WPRoofreaderWithoutWscInitialization(editor, optionsManager);
+
+				expect(() => uninitialized.isDisabled()).to.not.throw();
+			});
+
 			it('should indicates whether WSC instance is disabled', () => {
 				wscInstance.isDisabled.returns(true);
 
@@ -198,7 +216,27 @@ describe('WProofreader', () => {
 			});
 		});
 
+		describe('openSettings method', () => {
+			it('should not fall on uninitialized instance method call', () => {
+				const uninitialized = new WPRoofreaderWithoutWscInitialization(editor, optionsManager);
+
+				expect(() => uninitialized.openSettings()).to.not.throw();
+			});
+
+			it('should open WSC instance dialog', () => {
+				wproofreader.openSettings();
+
+				expect(wscInstance.openSettings.calledOnce).to.be.true;
+			});
+		});
+
 		describe('openDialog method', () => {
+			it('should not fall on uninitialized instance method call', () => {
+				const uninitialized = new WPRoofreaderWithoutWscInitialization(editor, optionsManager);
+
+				expect(() => uninitialized.openDialog()).to.not.throw();
+			});
+
 			it('should open WSC instance dialog', () => {
 				wproofreader.openDialog();
 

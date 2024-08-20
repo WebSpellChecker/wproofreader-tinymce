@@ -1,7 +1,7 @@
 import sinon from 'sinon';
 import { expect } from 'chai';
 import IconManager from '../../src/iconmanager';
-import Editor from './mocks/editor';
+import Editor from '../mocks/editor';
 
 describe('IconManager', () => {
 	const iconManager = new IconManager();

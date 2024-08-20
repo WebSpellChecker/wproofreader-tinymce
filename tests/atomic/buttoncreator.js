@@ -2,8 +2,8 @@ import sinon from 'sinon';
 import { expect } from 'chai';
 import ButtonCreator from '../../src/buttoncreator';
 import WProofreader from '../../src/wproofreader';
-import Editor from './mocks/editor';
-import WscInstance, { staticActions } from './mocks/wscinstance';
+import Editor from '../mocks/editor';
+import WscInstance, { staticActions } from '../mocks/wscinstance';
 
 describe('ButtonCreator', () => {
 	let wscInstance;
