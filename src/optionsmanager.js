@@ -60,6 +60,7 @@ export default class OptionsManager {
 	_init() {
 		this._setTheme();
 		this._setAutoStartup();
+		this._setBaseOptions();
 	}
 
 	/**
@@ -82,6 +83,15 @@ export default class OptionsManager {
 		if (!this._options.hasOwnProperty('autoStartup')) {
 			this._options.autoStartup = true;
 		}
+	}
+
+	/**
+	 * Sets base wproofreader initialization options.
+	 *
+	 * @private
+	 */
+	_setBaseOptions() {
+		this._options.appType = 'wpr_tinymce';
 	}
 
 	/**
