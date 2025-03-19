@@ -71,6 +71,7 @@
         _init() {
             this._setTheme();
             this._setAutoStartup();
+            this._setBaseOptions();
         }
         _setTheme() {
             if (!this._options.theme) {
@@ -81,6 +82,9 @@
             if (!this._options.hasOwnProperty("autoStartup")) {
                 this._options.autoStartup = true;
             }
+        }
+        _setBaseOptions() {
+            this._options.appType = "wpr_tinymce";
         }
         getOptions() {
             return this._options;
