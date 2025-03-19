@@ -55,6 +55,10 @@ describe('OptionsManager', () => {
 
 			expect(options.autoStartup).to.be.false;
 		});
+
+		it('should set base wproofreader initialization options', () => {
+			expect(options.appType).to.be.equal('wpr_tinymce');
+		});
 	});
 
 	describe('getOptions method', () => {
