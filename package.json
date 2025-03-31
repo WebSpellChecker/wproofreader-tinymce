@@ -1,6 +1,6 @@
 {
   "name": "@webspellchecker/wproofreader-tinymce",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "WProofreader spelling and grammar check plugin for TinyMCE",
   "scripts": {
     "build": "webpack --config webpack.prod.js --env mode=production",
