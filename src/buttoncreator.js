@@ -46,7 +46,7 @@ export default class ButtonCreator {
 	create(editor) {
 		editor.ui.registry.addMenuButton('wproofreader', {
 			icon: 'wproofreader',
-			tooltip: 'WProofreader text checker',
+			tooltip: 'Proofread',
 			fetch: (callback) => callback(this._getMenuButtons())
 		});
 	}
