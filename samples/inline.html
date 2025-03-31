@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>WProofreader TinyMCE plugin</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="../tinymce/tinymce.min.js" referrerpolicy="origin"></script>
+
+	<script>
+		const config = {
+			inline: true,
+			menubar: false,
+			toolbar: 'undo redo | bold italic underline | wproofreader',
+			license_key: 'gpl',
+			external_plugins: {
+				wproofreader: '../dist/plugin.min.js'
+			},
+			wproofreader: {
+				serviceProtocol: 'http',
+				serviceHost: 'localhost',
+				servicePort: '2880',
+				servicePath: '/',
+				srcUrl: 'https://svc.webspellchecker.net/spellcheck31/wscbundle/wscbundle.js'
+			}
+		};
+
+		tinymce.init({
+			...config,
+			selector: '.tinymce-editable'
+		});
+
+		tinymce.init({
+			...config,
+			selector: '.tinymce-partial-editable',
+			editable_root: false,
+			editable_class: 'editable'
+		});
+
+		tinymce.init({
+			...config,
+			selector: '.tinymce-non-editable',
+			editable_root: false,
+		});
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div class="tinymce-editable">
+			<p>Enter you text here. Hover on the marked words for intant correction suggestions. To got the whole text checked at once, switch to the Proofread in dialog mode in the editor settings.</p>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="tinymce-partial-editable">
+			<p>Enter you text here. Hover on the <span class="editable">marked words for intant correction suggestions. To got the whole text checked at once,</span> switch to the Proofread in dialog mode in the editor settings.</p>
+			<p class="editable">Enter you text here. Hover on the marked words for intant correction suggestions. To got the whole text checked at once, switch to the Proofread in dialog mode in the editor settings.</p>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="tinymce-non-editable">
+			<p>Enter you text here. Hover on the <span class="editable">marked words for intant correction suggestions. To got the whole text checked at once,</span> switch to the Proofread in dialog mode in the editor settings.</p>
+		</div>
+	</div>
+
+	<style>
+		.container {
+			margin-top: 70px;
+		}
+	</style>
+</body>
+</html>

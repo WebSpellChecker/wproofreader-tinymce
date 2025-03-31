@@ -1,0 +1,63 @@
+{
+  "name": "@webspellchecker/wproofreader-tinymce",
+  "version": "1.0.0",
+  "description": "WProofreader spelling and grammar check plugin for TinyMCE",
+  "scripts": {
+    "build": "webpack --config webpack.prod.js --env mode=production",
+    "start": "webpack-dev-server --config webpack.dev.js --env mode=development",
+    "prepare": "npm run build",
+    "test": "npm run build && karma start",
+    "test-dev": "npm run build && karma start --auto-watch --no-single-run",
+    "lint": "eslint --quiet ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebSpellChecker/wproofreader-tinymce.git"
+  },
+  "author": "WebSpellChecker (https://webspellchecker.com/)",
+  "bugs": {
+    "url": "https://github.com/WebSpellChecker/wproofreader-tinymce/issues"
+  },
+  "homepage": "https://github.com/WebSpellChecker/wproofreader-tinymce#readme",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "keywords": [
+    "tinymce spellchecker",
+    "tinymce grammar checker",
+    "tinymce plugin",
+    "wproofreader",
+    "spell check",
+    "grammar check",
+    "proofreading"
+  ],
+  "devDependencies": {
+    "chai": "^4.4.1",
+    "copy-webpack-plugin": "^12.0.2",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-formatter-pretty": "^6.0.1",
+    "eslint-plugin-chai": "^0.0.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-mocha": "^10.5.0",
+    "husky": "^9.1.4",
+    "karma": "^6.4.4",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^3.2.0",
+    "karma-mocha": "^2.0.1",
+    "karma-mocha-reporter": "^2.2.5",
+    "karma-sinon": "^1.0.5",
+    "karma-sourcemap-loader": "^0.4.0",
+    "karma-webpack": "^5.0.1",
+    "mocha": "^10.7.0",
+    "sinon": "^18.0.0",
+    "terser-webpack-plugin": "^5.3.10",
+    "tinymce": "^7.3.0",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4",
+    "webpack-version-file": "^0.1.7"
+  }
+}
