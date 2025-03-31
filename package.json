@@ -1,6 +1,6 @@
 {
-  "name": "wproofreader-tinymce",
-  "version": "0.0.1",
+  "name": "@webspellchecker/wproofreader-tinymce",
+  "version": "1.0.0",
   "description": "WProofreader spelling and grammar check plugin for TinyMCE",
   "scripts": {
     "build": "webpack --config webpack.prod.js --env mode=production",
@@ -19,6 +19,20 @@
     "url": "https://github.com/WebSpellChecker/wproofreader-tinymce/issues"
   },
   "homepage": "https://github.com/WebSpellChecker/wproofreader-tinymce#readme",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "keywords": [
+    "tinymce spellchecker",
+    "tinymce grammar checker",
+    "tinymce plugin",
+    "wproofreader",
+    "spell check",
+    "grammar check",
+    "proofreading"
+  ],
   "devDependencies": {
     "chai": "^4.4.1",
     "copy-webpack-plugin": "^12.0.2",
