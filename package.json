@@ -55,7 +55,7 @@
     "sinon": "^18.0.0",
     "terser-webpack-plugin": "^5.3.10",
     "tinymce": "^7.3.0",
-    "webpack": "^5.93.0",
+    "webpack": "^5.98.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.4",
     "webpack-version-file": "^0.1.7"
