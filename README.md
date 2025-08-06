@@ -1,7 +1,7 @@
 WProofreader plugin TinyMCE
 ===================================
 
-The multilingual spelling and grammar checking solution for TinyMCE editor versions starting from v6, including the latest version 7. It provides both instant and in-dialog proofreading modes in a convenient UI. 
+The multilingual spelling and grammar checking solution for TinyMCE editor versions starting from v6, including the latest version 8. It provides both instant and in-dialog proofreading modes in a convenient UI. 
 
 WProofreader plugin for TinyMCE inherits all functionality of the WProofreader component with slight adaptation to the view and features of the editor. These adaptations include creating a button in the editor toolbar, listening for read-only mode switches and adding a theme adapted to the TinyMCE look and feel. For more details, visit the [WProofreader repo](https://github.com/WebSpellChecker/wproofreader) or [official web page](https://webspellchecker.com/wsc-proofreader/).
 
@@ -26,7 +26,7 @@ WProofreader plugin for TinyMCE inherits all functionality of the WProofreader c
 	Use the `external_plugins` option to specify the URL-based location of the entry point file for the plugin and include it as a toolbar item using `toolbar` option.
 
 	```html
-	<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+	<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/8/tinymce.min.js" referrerpolicy="origin"></script>
 
 	<script>
 		tinymce.init({
