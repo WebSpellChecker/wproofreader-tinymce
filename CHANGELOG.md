@@ -1,5 +1,9 @@
 # WProofreader plugin for TinyMCE Changelog
 
+## 1.0.1 – 2025-08-06
+
+Internal changes only (updated dependencies, documentation, etc.).
+
 ## 1.0.0 – 2025-03-31
 
 This is the initial release of the WProofreader plugin for TinyMCE. Key differences from the classic WProofreader include:
